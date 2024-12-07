@@ -1,0 +1,21 @@
+"Antibiotic","Class","SideChain","BLactamRing","CoreRing"
+"Ampicillin","Penicillin","SideChainAcyl",TRUE,"ThiazolidineRing"
+"Amoxicillin","Penicillin","SideChainAcyl",TRUE,"ThiazolidineRing"
+"Piperacillin","Penicillin","SideChainAcyl",TRUE,"ThiazolidineRing"
+"Cefazolin","1st Gen Cephalosporin","SideChainAcyl",TRUE,"DihydrothiazineRing"
+"Cefuroxime","2nd Gen Cephalosporin","SideChainAcyl",TRUE,"DihydrothiazineRing"
+"Ceftriaxone","3rd Gen Cephalosporin","SideChainAcyl",TRUE,"DihydrothiazineRing"
+"Ceftazidime","3rd Gen Cephalosporin","SideChainAcyl",TRUE,"DihydrothiazineRing"
+"Cefepime","4th Gen Cephalosporin","SideChainAcyl",TRUE,"DihydrothiazineRing"
+"Ertapenem","Carbapenem","SideChainAcyl",TRUE,"CarbapenemRing"
+"Meropenem","Carbapenem","SideChainAcyl",TRUE,"CarbapenemRing"
+"Aztreonam","Monobactam","UniqueSideChain",TRUE,"MonobactamCore"
+"Ciprofloxacin","Quinolone",NA,FALSE,NA
+"Levofloxacin","Quinolone",NA,FALSE,NA
+"Moxifloxacin","Quinolone",NA,FALSE,NA
+"Doxycycline","Tetracycline",NA,FALSE,NA
+"Minocycline","Tetracycline",NA,FALSE,NA
+"Vancomycin","Glycopeptide",NA,FALSE,NA
+"Clindamycin","Lincosamide",NA,FALSE,NA
+"Gentamicin","Aminoglycoside",NA,FALSE,NA
+"Tobramycin","Aminoglycoside",NA,FALSE,NA
