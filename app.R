@@ -200,7 +200,7 @@ server <- function(input, output, session) {
       img_src <- paste0("Images/", antibiotic, ".svg")
       img_path <- file.path("www", "Images", paste0(antibiotic, ".svg"))
       if (!file.exists(img_path)) {
-        img_src <- "Images/placeholder.png" # Ensure you have a placeholder image
+        img_src <- "Images/placeholder.png" # Placeholder image while I haven't rendered all of the molecules yet 
       }
       
       div(
@@ -222,3 +222,12 @@ server <- function(input, output, session) {
 
 # Run the app
 shinyApp(ui, server)
+
+
+## TO-DO
+# 1. Add the rest of the missing antibiotic images 
+# 2. Replace dummy data with researched data
+# 3. See if it is possible to highlight parts of the images with the corresponding matching features
+# 4. Add a button to add more antibiotics dynamically
+# 5. Add a button to reset the selection - major hassle so far
+# 6. improve the look of the app
