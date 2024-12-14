@@ -3,8 +3,19 @@ library(shiny)
 library(shinythemes) # decide a theme later
 # Define the UI
 ui <- fluidPage(
+  tags$head( # Inserted JavaScript
+    tags$script(HTML(
+      "
+      $(document).ready(function() {
+        $('#reset_button').click(function() {
+          location.reload();
+        });
+      });
+      "
+    ))
+  ),
   titlePanel("PenicillinX"),
-  
+  theme = shinytheme("flatly"),
   sidebarLayout(
     sidebarPanel(
       # Dropdown menu for selecting the first antibiotic with placeholder
@@ -32,7 +43,8 @@ ui <- fluidPage(
         choices = NULL,      # Will be populated by the csv 
         selected = "",       # Default no selection 
         selectize = TRUE     # Enables autocomplete
-      )
+      ),
+      actionButton("reset_button", "Reset"), # Button to reset the selections
     ),
     mainPanel(
       # Where the antibiotic pictures will be shown
