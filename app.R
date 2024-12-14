@@ -1,9 +1,10 @@
 # Libraries
 library(shiny)
-library(shinythemes) # decide a theme later
+library(shinythemes) 
 # Define the UI
 ui <- fluidPage(
   tags$head( # Inserted JavaScript
+ #   tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
     tags$script(HTML(
       "
       $(document).ready(function() {
@@ -14,8 +15,10 @@ ui <- fluidPage(
       "
     ))
   ),
-  titlePanel("PenicillinX"),
-  theme = shinytheme("flatly"),
+  titlePanel(
+    h1("PenicillinX", align = "center")
+  ), 
+  theme = shinytheme("superhero"),
   sidebarLayout(
     sidebarPanel(
       # Dropdown menu for selecting the first antibiotic with placeholder
@@ -44,7 +47,7 @@ ui <- fluidPage(
         selected = "",       # Default no selection 
         selectize = TRUE     # Enables autocomplete
       ),
-      actionButton("reset_button", "Reset"), # Button to reset the selections
+      actionButton("reset_button", "Reset", style = "color: #4e5d6c; background-color: #fff; border: 1px solid #4e5d6c; border-radius: 3px;"), 
     ),
     mainPanel(
       # Where the antibiotic pictures will be shown
@@ -58,7 +61,27 @@ ui <- fluidPage(
       # If there are common features among 3 antibiotics, then this will show up 
       uiOutput("common_matches_output")
     )
-  )
+  ),
+ 
+ tags$footer( # Disclaimer and link to github
+   p(align = "center",
+     "App currently in development. This should absolutely not be used in any clinical setting.",
+     a(href = "https://github.com/liamlah/PenicillinX", target = "_blank", 
+       "More information can be found on the GitHub page")
+   ),
+   style = "
+      position: fixed;
+      bottom: 0; 
+      left: 50%;
+      transform: translateX(-50%); 
+      width: 80%;
+      height: 20px;
+      color: black;
+      padding: 0px;
+      background-color: lightgrey;
+      z-index: 100;
+    "
+ ) 
 )
 
 # Define the server
@@ -178,11 +201,11 @@ server <- function(input, output, session) {
       common_features <- find_common_all(selected)
       common_features_formatted <- format_matches(common_features)
       
-      # Prepares the output for the common featyres
+      # Prepares the output for the common features
       if ((!is.null(common_features$side_chain) && length(common_features$side_chain) > 0) ||
           (!is.null(common_features$core_ring) && length(common_features$core_ring) > 0)) {
         return(
-          div(style = "margin-top: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f0f8ff;",
+          div(style = "margin-top: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f0f8ff; color: #000;",
               strong(paste("🔹 Matching features among all three antibiotics (", 
                            paste(selected, collapse = ", "), "):")),
               common_features_formatted
@@ -190,7 +213,7 @@ server <- function(input, output, session) {
         )
       } else {
         return(
-          div(style = "margin-top: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f0f8ff;",
+          div(style = "margin-top: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f0f8ff; color: #000;",
               strong("❗ No matching features among all three antibiotics."))
         )
       }
@@ -209,7 +232,7 @@ server <- function(input, output, session) {
     
     # Create a list to hold image-tag pairs
     image_tags <- lapply(selected, function(antibiotic) {
-      img_src <- paste0("Images/", antibiotic, ".svg")
+      img_src <- paste0("ImagesInv/", antibiotic, ".svg")
       img_path <- file.path("www", "Images", paste0(antibiotic, ".svg"))
       if (!file.exists(img_path)) {
         img_src <- "Images/placeholder.png" # Placeholder image while I haven't rendered all of the molecules yet 
@@ -237,9 +260,12 @@ shinyApp(ui, server)
 
 
 ## TO-DO
-# 1. Add the rest of the missing antibiotic images 
 # 2. Replace dummy data with researched data
 # 3. See if it is possible to highlight parts of the images with the corresponding matching features
 # 4. Add a button to add more antibiotics dynamically
-# 5. Add a button to reset the selection - major hassle so far
 # 6. improve the look of the app
+# 7. Fix issue where images overlap at certain screen sizes
+
+## DONE 
+# 1. Add the rest of the missing antibiotic images
+# 5. Add a button to reset the selection
