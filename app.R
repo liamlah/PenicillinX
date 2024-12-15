@@ -70,11 +70,11 @@ ui <- fluidPage(
        "More information can be found on the GitHub page")
    ),
    style = "
-      position:fixed;
-      bottom: 0; 
-      left: 50%;
-      transform: translateX(-50%); 
-      width: 80%;
+      position:center;
+      bottom: ; 
+      left: 0%;
+      transform: translateX(-0%); 
+      width: 100%;
       height: auto;
       color: white;
       padding: 0px;
