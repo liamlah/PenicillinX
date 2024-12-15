@@ -1,24 +1,43 @@
 # Libraries
 library(shiny)
 library(shinythemes) 
+library(fontawesome)
 # Define the UI
+
 ui <- fluidPage(
   tags$head( # Inserted JavaScript
- #   tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
-    tags$script(HTML(
-      "
+ #   tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"), # use if you decide against a standard theme
+    tags$title("PenicillinX"), 
+    tags$script(HTML("
       $(document).ready(function() {
         $('#reset_button').click(function() {
           location.reload();
         });
+        $('.instructions-toggle').click(function() {
+          $(this).next('.instructions-text').slideToggle();
       });
-      "
-    ))
+    }); 
+      
+   "))
   ),
+ 
   titlePanel(
-    h1("PenicillinX", align = "center")
+    h1("PenicillinX", align = "center"),
   ), 
   theme = shinytheme("superhero"),
+ # Instructions section
+ 
+ div(
+   class = "instructions-toggle",
+   style = "text-align: left; font-weight: bold; cursor: pointer; margin-bottom: 10px;",
+   span(class = "fas fa-caret-right", style = "color: #4e5d6c; margin-right: 5px;"), 
+   "> Instructions" 
+ ),
+ div(
+   class = "instructions-text",
+   style = "display: none; text-align: justify;",
+   "This application allows you to compare different antibiotics based on their chemical structure. Select up to three antibiotics from the dropdown. The application will then analyze the selected antibiotics and display any matching features they share. Eventually this app will allow clinicians to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives."
+ ),
   sidebarLayout(
     sidebarPanel(
       # Dropdown menu for selecting the first antibiotic with placeholder
@@ -235,7 +254,7 @@ server <- function(input, output, session) {
       img_src <- paste0("ImagesInv/", antibiotic, ".svg")
       img_path <- file.path("www", "Images", paste0(antibiotic, ".svg"))
       if (!file.exists(img_path)) {
-        img_src <- "Images/placeholder.png" # Placeholder image while I haven't rendered all of the molecules yet 
+        img_src <- "Images/placeholder.png" # Placeholder image if I decide to add more antibiotics 
       }
       
       div(
