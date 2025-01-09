@@ -7,6 +7,11 @@ from pathlib import Path
 from shiny.express import input, render, ui
 import shinyswatch
 
+#RDKit imports
+from rdkit import Chem
+from rdkit.Chem import Draw
+
+
 
 #def abxdata():
  #   infile = Path(__file__).parent / "anitbioticsdata.csv"
@@ -69,12 +74,16 @@ with (ui.sidebar(open="always")):
 
 #Output panel
 ui.markdown("Selected Antibiotics:")
-@render.code
+@render.image
 def selectedlist1():
-    return input.abx1()
-@render.code
-def selectedlist2():
-    return input.abx2()
-@render.code
-def selectedlist3():
-    return input.abx3()
+    #return input.abx1()
+    abxOP1 = Chem.MolFromSmiles('CC(=O)OC1=CC=CC=C1C(=O)O')
+    return Draw.MolToImage(abxOP1)
+
+
+#@render.code
+#def selectedlist2():
+#    return input.abx2()
+#@render.code
+#def selectedlist3():
+#    return input.abx3()
