@@ -153,3 +153,8 @@ def selectedlist3():
         useSVG=True,
         )
     return ui.HTML(svg)
+
+# todo
+# kekerize
+# transparent background SVG
+# SVG alignment
