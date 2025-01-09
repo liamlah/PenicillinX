@@ -9,7 +9,9 @@ import shinyswatch
 
 #RDKit imports
 from rdkit import Chem
-from rdkit.Chem import Draw
+from rdkit.Chem import Draw, AllChem
+import base64
+from io import BytesIO
 
 
 
@@ -73,17 +75,80 @@ with (ui.sidebar(open="always")):
 
 
 #Output panel
-ui.markdown("Selected Antibiotics:")
-@render.image
+@render.ui
 def selectedlist1():
-    #return input.abx1()
-    abxOP1 = Chem.MolFromSmiles('CC(=O)OC1=CC=CC=C1C(=O)O')
-    return Draw.MolToImage(abxOP1)
+    # Get the selected antibiotic from the input
+    selected_abx = input.abx1()
+    if not selected_abx:
+        return ui.HTML("<p>Please select an antibiotic.</p>")  # Handle empty selection
 
+    # Fetch the SMILES string corresponding to the selected antibiotic
+    smiles = abxdata.loc[abxdata["Antibiotic"] == selected_abx, "SMILESFull"].values
+    if len(smiles) == 0:
+        return ui.HTML("<p>SMILES not found for the selected antibiotic.</p>")
 
-#@render.code
-#def selectedlist2():
-#    return input.abx2()
-#@render.code
-#def selectedlist3():
-#    return input.abx3()
+    # Generate the molecule from the retrieved SMILES
+    mol = Chem.MolFromSmiles(smiles[0])
+    if not mol:
+        return ui.HTML("<p>Invalid SMILES format for the selected antibiotic.</p>")
+    # Generate the molecule image
+    svg = Draw.MolsToGridImage(
+        [mol],
+        molsPerRow=1,
+        subImgSize=(300, 300),
+        legends=[selected_abx],
+        useSVG=True,
+        )
+    return ui.HTML(svg)
+
+@render.ui
+def selectedlist2():
+    # Get the selected antibiotic from the input
+    selected_abx = input.abx2()
+    if not selected_abx:
+        return ui.HTML("<p>Please select an antibiotic.</p>")  # Handle empty selection
+
+    # Fetch the SMILES string corresponding to the selected antibiotic
+    smiles = abxdata.loc[abxdata["Antibiotic"] == selected_abx, "SMILESFull"].values
+    if len(smiles) == 0:
+        return ui.HTML("<p>SMILES not found for the selected antibiotic.</p>")
+
+    # Generate the molecule from the retrieved SMILES
+    mol = Chem.MolFromSmiles(smiles[0])
+    if not mol:
+        return ui.HTML("<p>Invalid SMILES format for the selected antibiotic.</p>")
+    # Generate the molecule image
+    svg = Draw.MolsToGridImage(
+        [mol],
+        molsPerRow=1,
+        subImgSize=(300, 300),
+        legends=[selected_abx],
+        useSVG=True,
+        )
+    return ui.HTML(svg)
+
+@render.ui
+def selectedlist3():
+    # Get the selected antibiotic from the input
+    selected_abx = input.abx3()
+    if not selected_abx:
+        return ui.HTML("<p>Please select an antibiotic.</p>")  # Handle empty selection
+
+    # Fetch the SMILES string corresponding to the selected antibiotic
+    smiles = abxdata.loc[abxdata["Antibiotic"] == selected_abx, "SMILESFull"].values
+    if len(smiles) == 0:
+        return ui.HTML("<p>SMILES not found for the selected antibiotic.</p>")
+
+    # Generate the molecule from the retrieved SMILES
+    mol = Chem.MolFromSmiles(smiles[0])
+    if not mol:
+        return ui.HTML("<p>Invalid SMILES format for the selected antibiotic.</p>")
+    # Generate the molecule image
+    svg = Draw.MolsToGridImage(
+        [mol],
+        molsPerRow=1,
+        subImgSize=(300, 300),
+        legends=[selected_abx],
+        useSVG=True,
+        )
+    return ui.HTML(svg)
