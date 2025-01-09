@@ -1,7 +1,7 @@
-import seaborn as sns
+#import seaborn as sns
 
 # Import data from shared.py
-from shared import df
+#from shared import df
 import pandas as pd
 from pathlib import Path
 from shiny.express import input, render, ui
@@ -23,11 +23,15 @@ ui.page_opts(title="PenicillinX!",
              style="text-align: center;"
              )
 
+
+
 with ui.tags.head(): # Edits the title to centre it
     ui.tags.style("""
         .navbar-brand {
             text-align: center;
+            font-size: 38px;
             flex-grow: 1;
+            
         }
         .navbar-header {
             display: flex;
@@ -35,6 +39,7 @@ with ui.tags.head(): # Edits the title to centre it
             width: 100%;
         }
     """)
+
 
 
 
@@ -51,19 +56,25 @@ with (ui.sidebar(open="always")):
         id="abx2",
         label="Select Antibiotic 2:",
         selected="Select Antibiotic",
-        choices=["Select Antibiotic"] + abxdata["Antibiotic"].tolist(),
+        choices=[""] + abxdata["Antibiotic"].tolist(),
         options={"Placeholder": "Select Please", "allowEmptyOption": False})
 
     ui.input_selectize(
         id="abx3",
         label="Select Antibiotic 3:",
         selected="Select Antibiotic",
-        choices=["Select Antibiotic"] + abxdata["Antibiotic"].tolist(),
+        choices=[""] + abxdata["Antibiotic"].tolist(),
         options={"Placeholder": "Select Please", "allowEmptyOption": False})
 
 
-
-
-
-
-
+#Output panel
+ui.markdown("Selected Antibiotics:")
+@render.code
+def selectedlist1():
+    return input.abx1()
+@render.code
+def selectedlist2():
+    return input.abx2()
+@render.code
+def selectedlist3():
+    return input.abx3()
