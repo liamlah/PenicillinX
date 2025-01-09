@@ -15,6 +15,7 @@ from io import BytesIO
 
 
 
+
 #def abxdata():
  #   infile = Path(__file__).parent / "anitbioticsdata.csv"
   #  return pd.read_csv(infile)
@@ -74,7 +75,7 @@ with (ui.sidebar(open="always")):
         options={"Placeholder": "Select Please", "allowEmptyOption": False})
 
 
-#Output panel
+
 @render.ui
 def selectedlist1():
     # Get the selected antibiotic from the input
