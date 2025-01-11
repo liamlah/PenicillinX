@@ -1,3 +1,4 @@
-shiny
-seaborn
 pandas
+shiny
+shinyswatch
+rdkit
