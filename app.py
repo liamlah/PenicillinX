@@ -109,7 +109,7 @@ with (ui.sidebar(open="always", width="25%", max_height="20%", max_height_mobile
                 "Select up to three antibiotics from the dropdown. The application will then analyze the selected antibiotics and display any matching features they share. Eventually, this app will allow clinicians "
                 "to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives. "
                 "<br><br>"
-                "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> More information can be found on<a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>GitHub</a>")
+                "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> <a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>More information can be found on GitHub</a>")
 
 
 #================================================== MAIN PANEL ==================================================
