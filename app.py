@@ -55,11 +55,9 @@ with ui.tags.head():  # Customize the head section of the webpage
         .card-header, .card-body { /* Include headers and bodies */
             background-color: #0f2537 !important;
             color: #ffffff !important; /* Ensure text is readable */
+            text-align: left !important; /* Left-align the text */
         }
-        .HTML p {  /* Specifically target paragraphs inside the .HTML output */
-            text-align: left !important; /* Left-align the text */ 
-            margin-left: 10px; /* Optional: Add some margin for better spacing */
-        } /* Setting ubuntu font */
+         /* Setting ubuntu font */
         .ubuntu-light {
                font-family: 'Ubuntu', sans-serif;
                font-weight: 300;
@@ -113,8 +111,8 @@ with (ui.sidebar(open="always", width="25%", max_height="20%", max_height_mobile
 
 
 #================================================== MAIN PANEL ==================================================
-with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regular"):
-    with ui.card(fill=False):
+with ui.layout_column_wrap(fixed_width=True, width="330px", class_="ubuntu-regular"):
+    with ui.card(fill=True, min_height="250px"):
         @render.ui
         def selectedlist1():
             # Get the selected antibiotic from the input
@@ -147,7 +145,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
             # Makes the molecule white to match the dark theme
             atom_palette = {atom.GetIdx(): (1.0, 1.0, 1.0) for atom in mol.GetAtoms()}
             opts.setAtomPalette(atom_palette)
-            opts.fontFile = "www/fonts/Ubuntu-Light.ttf"
+            opts.fontFile = "www/fonts/Ubuntu-Regular.ttf"
             opts.setLegendColour((1, 1, 1))  # White legend color
             opts.legendFontSize = 20
 
@@ -209,7 +207,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
             return ui.HTML(svg + message_html)
 
 
-    with ui.card(fill=False):
+    with ui.card(fill=True, min_height="250px"):
         @render.ui
         def selectedlist2():
             # Get the selected antibiotic from the input
@@ -303,7 +301,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
             message_html = "".join(f"<p>{msg}</p>" for msg in messages)
             return ui.HTML(svg + message_html)
 
-    with ui.card(fill=False):
+    with ui.card(fill=True, min_height="250px"):
         @render.ui
         def selectedlist3():
             # Get the selected antibiotic from the input
@@ -406,9 +404,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
 
 # todo
 # Improve small screen and mobile layount: sidebar layout - on top in mobile
-# Left justify text output in cards
 # New text box at bottom with summary of matches
-# Fix info accordion open on page load
 # refactor 3 functions to one if possible
 
 # Bugs to fix
