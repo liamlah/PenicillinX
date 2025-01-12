@@ -147,7 +147,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
             # Makes the molecule white to match the dark theme
             atom_palette = {atom.GetIdx(): (1.0, 1.0, 1.0) for atom in mol.GetAtoms()}
             opts.setAtomPalette(atom_palette)
-            opts.fontFile = "www/Ubuntu-Light.ttf"
+            opts.fontFile = "www/fonts/Ubuntu-Light.ttf"
             opts.setLegendColour((1, 1, 1))  # White legend color
             opts.legendFontSize = 20
 
@@ -242,7 +242,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
             # Makes the molecule white to match the dark theme
             atom_palette = {atom.GetIdx(): (1.0, 1.0, 1.0) for atom in mol.GetAtoms()}
             opts.setAtomPalette(atom_palette)
-            opts.fontFile = "www/Ubuntu-Regular.ttf"
+            opts.fontFile = "www/fonts/Ubuntu-Regular.ttf"
             opts.setLegendColour((1, 1, 1))  # White legend color
             opts.legendFontSize = 20
 
@@ -332,7 +332,7 @@ with ui.layout_column_wrap(fixed_width=False, width="330px", class_="ubuntu-regu
             drawer = rdMolDraw2D.MolDraw2DSVG(300, 300)  # Set canvas size
             opts = drawer.drawOptions()
             opts.setBackgroundColour((1, 1, 1, 0))  # Transparent background (RGBA)
-            opts.fontFile= "www/Ubuntu-Regular.ttf"
+            opts.fontFile= "www/fonts/Ubuntu-Regular.ttf"
             # Makes the molecule white to match the dark theme
             atom_palette = {atom.GetIdx(): (1.0, 1.0, 1.0) for atom in mol.GetAtoms()}
             opts.setAtomPalette(atom_palette)
