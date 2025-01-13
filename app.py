@@ -41,10 +41,15 @@ with ui.tags.head():  # Customize the head section of the webpage
             flex-grow: 1;
             font-family: 'Ubuntu', sans-serif;
         }
+        .navbar-static-top {
+            background-color: #0f2537 !important;
+            border: none !important;       
+        }
         .navbar-header {
             display: flex;
             justify-content: center;
             width: 100%;
+            
         }
         .card { /* Target all cards */
             background-color: #0f2537 !important; /* Set card background to match page */
@@ -74,10 +79,56 @@ with ui.tags.head():  # Customize the head section of the webpage
                font-family: 'Ubuntu', sans-serif;
                font-style: italic;
            }
+           .btn-default {
+                bg-color: #c97231 !important;
+                color: #c97231 !important;
+
+           }
+           .sidebar {
+                width: 100% !important;
+                height: 500px;
+                font-family: 'Ubuntu', sans-serif;
+                font-weight: 300;
+                font-size: 12;
+                position: auto;
+                overflow: visible !important;
+                background-color: #3b4d5b !important;
+                border: none !important;
+            }
+           .bslib-sidebar-layout {
+               overflow-y: visible !important;
+               width: auto !important;
+            } /* -------------------------------MOBILE OPTIONS--------------------------------------- */
+           @media (max-width: 767px) { 
+                .sidebar { 
+                    width: auto; /* Make sidebar full width */
+                    order: -1 !important; 
+                    max-height: 312px; /* Make the sidebar full height */
+                    overflow: visible !important;
+           }     
+                .bslib-sidebar-layout {
+                    display: flex !important; 
+                    flex-direction: column !important;
+                    overflow-y: visible !important;
+           }
+                .card {
+                width: 100%;
+                min-width: 100%;
+                fill: true;
+           }
+                .bslib-sidebar-layout[data-collapsible-mobile="false"] {
+                    display: flex !important; /* Maintain flex layout */
+           }
+                .bslib-grid {
+                    --_item-column-span: 1 !important;
+                    grid-template-columns: 1fr !important;
+                    grid-auto-rows: 1fr !important;
+                    grid-height: auto !important;
+           }
     """)
 
 #================================================== SIDEBAR ==================================================
-with (ui.sidebar(open="always", width="25%", max_height="20%", max_height_mobile="25%", class_="ubuntu-light",)):
+with (ui.sidebar(open="always")):
     ui.input_selectize(
         id="abx1",
         label="Select Antibiotic 1:",
@@ -100,17 +151,24 @@ with (ui.sidebar(open="always", width="25%", max_height="20%", max_height_mobile
         choices=[""] + abxData["Antibiotic"].tolist(),
         options={"Placeholder": "Select Please", "allowEmptyOption": True, "plugins":["clear_button"]})
 
-    with ui.accordion(id="accordion", open=None):
-        with ui.accordion_panel("Info", class_="ubuntu-italic"):
-            ui.HTML(
+#    with ui.accordion(id="accordion", open=None):
+#        with ui.accordion_panel("Info", class_="ubuntu-italic"):
+#            ui.HTML(
+#                "This application allows you to compare the chemical structures of various antibiotics to . "
+#                "Select up to three antibiotics from the dropdown. The application will then analyze the selected antibiotics and display any matching features they share. Eventually, this app will allow clinicians "
+#                "to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives. "
+#                "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> <a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>More information can be found on GitHub</a>")
+    with ui.tooltip(id="btn_tooltip", placement="bottom"):
+        ui.input_action_button("btn", "Info")
+        ui.HTML(
                 "This application allows you to compare the chemical structures of various antibiotics to . "
                 "Select up to three antibiotics from the dropdown. The application will then analyze the selected antibiotics and display any matching features they share. Eventually, this app will allow clinicians "
                 "to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives. "
-                "<br><br>"
                 "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> <a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>More information can be found on GitHub</a>")
 
 
-#================================================== MAIN PANEL ==================================================
+
+    #================================================== MAIN PANEL ==================================================
 with ui.layout_column_wrap(fixed_width=True, width="330px", class_="ubuntu-regular"):
     with ui.card(fill=True, min_height="250px"):
         @render.ui
@@ -121,7 +179,8 @@ with ui.layout_column_wrap(fixed_width=True, width="330px", class_="ubuntu-regul
             selected_abx3 = input.abx3()
 
             if not selected_abx:
-                return ui.HTML("<p>Please select an antibiotic.</p>")  # No output if selection empty
+                return ui.HTML("<p>Please select an antibiotic.</p>")
+
 
             # Get the SMILES string corresponding to the selected antibiotic
             smiles = abxData.loc[abxData["Antibiotic"] == selected_abx, "SMILESFull"].values
