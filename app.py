@@ -98,36 +98,41 @@ with ui.tags.head():  # Customize the head section of the webpage
            .bslib-sidebar-layout {
                overflow-y: visible !important;
                width: auto !important;
+            }
+            .layout_column_wrap {
+                width: 33.3%;
             } /* -------------------------------MOBILE OPTIONS--------------------------------------- */
-           @media (max-width: 767px) { 
+           @media (max-width: 575px) { 
                 .sidebar { 
                     width: auto; /* Make sidebar full width */
                     order: -1 !important; 
-                    max-height: 312px; /* Make the sidebar full height */
+                    max-height: 312px; 
                     overflow: visible !important;
            }     
                 .bslib-sidebar-layout {
                     display: flex !important; 
                     flex-direction: column !important;
-                    overflow-y: visible !important;
+                    overflow-y: scroll !important;
            }
                 .card {
-                width: 100%;
-                min-width: 100%;
-                fill: true;
+                    width: 100%;
+                    min-width: 100%;
+                    fill: true;
            }
                 .bslib-sidebar-layout[data-collapsible-mobile="false"] {
                     display: flex !important; /* Maintain flex layout */
+                    
            }
                 .bslib-grid {
                     --_item-column-span: 1 !important;
                     grid-template-columns: 1fr !important;
                     grid-auto-rows: 1fr !important;
                     grid-height: auto !important;
-           }
+           } 
     """)
 
 #================================================== SIDEBAR ==================================================
+
 with (ui.sidebar(open="always")):
     ui.input_selectize(
         id="abx1",
