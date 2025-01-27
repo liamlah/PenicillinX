@@ -4,6 +4,7 @@ from pathlib import Path
 # Shiny imports
 from shiny.express import input, render, ui
 import shinyswatch
+from shiny import reactive
 
 # RDKit imports
 from rdkit import Chem
@@ -132,7 +133,6 @@ with ui.tags.head():  # Customize the head section of the webpage
     """)
 
 #================================================== SIDEBAR ==================================================
-
 with (ui.sidebar(open="always")):
     ui.input_selectize(
         id="abx1",
@@ -171,6 +171,37 @@ with (ui.sidebar(open="always")):
                 "to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives. "
                 "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> <a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>More information can be found on GitHub</a>")
 
+# @reactive.effect # Ensures antibiotic can't be selected twice - remove during RDKIT debugging
+# def update_dropdown_choices():
+#     # Get the antibiotics selected in each dropdown
+#     selected_abx1 = input.abx1()
+#     selected_abx2 = input.abx2()
+#     selected_abx3 = input.abx3()
+#
+#     # Get the full list of antibiotics
+#     all_choices = abxData["Antibiotic"].tolist()
+#
+#     # Exclude selected antibiotics for each dropdown, keeping the current selection in view
+#     choices_for_abx1 = (
+#         [selected_abx1] + [abx for abx in all_choices if abx != selected_abx2 and abx != selected_abx3]
+#         if selected_abx1 else
+#         [""] + [abx for abx in all_choices if abx != selected_abx2 and abx != selected_abx3]
+#     )
+#     choices_for_abx2 = (
+#         [selected_abx2] + [abx for abx in all_choices if abx != selected_abx1 and abx != selected_abx3]
+#         if selected_abx2 else
+#         [""] + [abx for abx in all_choices if abx != selected_abx1 and abx != selected_abx3]
+#     )
+#     choices_for_abx3 = (
+#         [selected_abx3] + [abx for abx in all_choices if abx != selected_abx1 and abx != selected_abx2]
+#         if selected_abx3 else
+#         [""] + [abx for abx in all_choices if abx != selected_abx1 and abx != selected_abx2]
+#     )
+#
+#     # Dynamically update the dropdown choices while maintaining the current selection
+#     ui.update_selectize("abx1", choices=choices_for_abx1, selected=selected_abx1)
+#     ui.update_selectize("abx2", choices=choices_for_abx2, selected=selected_abx2)
+#     ui.update_selectize("abx3", choices=choices_for_abx3, selected=selected_abx3)
 
 
     #================================================== MAIN PANEL ==================================================
@@ -470,6 +501,7 @@ with ui.layout_column_wrap(fixed_width=True, width="330px", class_="ubuntu-regul
 # Improve small screen and mobile layount: sidebar layout - on top in mobile
 # New text box at bottom with summary of matches
 # refactor 3 functions to one if possible
+# Remove already selected options from input list
 
 # Bugs to fix
 # Fix one way matches. e.g ampicillin penicillinG
