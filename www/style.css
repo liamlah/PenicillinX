@@ -1,0 +1,138 @@
+:root {
+    --primary-bg: #0f2537;
+    --secondary-bg: #3b4d5b;
+    --text-color: #ffffff;
+    --accent-color: #0f2537;
+    --sidebar-width: 100%;
+}
+
+/* Base styles */
+.navbar-brand {
+    text-align: center;
+    font-size: 38px;
+    flex-grow: 1;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar-static-top {
+    background-color: #0f2537 !important;
+    border: none !important;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background-color: #0f2537 !important;
+    border: none !important;
+    box-shadow: none !important;
+    justify-content: center;
+}
+
+.card-header, .card-body {
+    background-color: #0f2537 !important;
+    color: #ffffff !important;
+    text-align: left !important;
+}
+
+.ubuntu-light {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+
+.ubuntu-regular {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+.ubuntu-bold {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.ubuntu-italic {
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+}
+
+.btn-default {
+    bg-color: #c97231 !important;
+    color: #c97231 !important;
+}
+
+.sidebar {
+    width: var(--sidebar-width) !important;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    background-color: #3b4d5b !important;
+    border: none !important;
+}
+
+.bslib-sidebar-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.layout_column_wrap {
+    width: 33.3%;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 575px) {
+    /* Reset sidebar layout container */
+    .bslib-sidebar-layout {
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
+        display: flex !important;
+    }
+
+    /* Position sidebar at top */
+    .sidebar {
+        width: 100% !important;
+        position: relative !important;
+        order: -1 !important;
+        height: auto !important;
+        min-height: 312px;
+        flex: 0 0 auto !important; /* Prevent flex shrinking */
+    }
+
+    /* Force main content after sidebar */
+    .bslib-sidebar-layout > *:not(.sidebar) {
+        order: 1 !important;
+        width: 100% !important;
+    }
+
+    .layout_column_wrap {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Ensure page container doesn't interfere with sidebar */
+    .bslib-page-container {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 100vh !important;
+    }
+
+    .bslib-grid {
+        --_item-column-span: 1 !important;
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: 1fr !important;
+        height: auto !important;
+    }
+}
