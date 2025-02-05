@@ -35,7 +35,31 @@ with ui.tags.head():
                  href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&display=swap")
     ui.tags.link(rel="stylesheet", href="style.css")
 
+#=================================================== Modal =============================================
 
+welcomeMessage = ui.markdown("""
+    This is a development preview for PenicillinX (Penicillin *Cross* reactivity). This program is designed to demonstrate the similar molecular substructures on various beta-lactam antibiotics.
+    #### Use case
+    When a patient with a history of hypersensitivity to more than one beta-lactam antibiotic, there is an opportunity to examine shared molecular structures between them to determine the causative substructure.
+    This can aid specialist clinicians in selecting beta-lactam antibiotics that are less likely to result in hypersensitivity reactions for potential challenge. 
+    #### Warning
+    PenicillinX is still under development. This is a preview for testing purposes. The results presented are currently not validated and should not be used to assist in **any** kind of clinical decision making.
+    
+    PenicillinX is provided free under the terms of the [GPL v3.0 licence](https://github.com/liamlah/PenicillinX/blob/main/LICENSE)
+    By using this software you agree to the terms of the licence, and agree not to use the results of this program in **any** clinical decision making.
+""")
+
+with ui.modal(
+    welcomeMessage,
+    title="Welcome",
+    footer=None,
+    size='l',
+    easy_close=False,
+    fade=True,
+    align = "left",
+):
+    with ui.modal_button(label="Accept", icon=None ):
+        pass
 
 #================================================== SIDEBAR ==================================================
 with (ui.sidebar(open="always")):
@@ -62,14 +86,23 @@ with (ui.sidebar(open="always")):
         options={"Placeholder": "Select Please", "allowEmptyOption": True, "plugins":["clear_button"]})
 
 
-    with ui.tooltip(id="btn_tooltip", placement="bottom"):
-        ui.input_action_button("btn", "Info")
-        ui.HTML(
-                "This application allows you to compare the chemical structures of various antibiotics to . "
-                "Select up to three antibiotics from the dropdown. The application will then analyze the selected antibiotics and display any matching features they share. Eventually, this app will allow clinicians "
-                "to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives. "
-                "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> <a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>More information can be found on GitHub</a>")
+    # @render.ui ----delete if remains unused
+    # @reactive.event(input.Info)
+    # def show_modal():
+    #     welcome_modal.show()
+    #
+    #
+    # ui.input_action_button("Info", "Show Info")
 
+
+    # with ui.tooltip(id="btn_tooltip", placement="bottom"):
+    #     ui.input_action_button("btn", "Info")
+    #     ui.HTML(
+    #             "This application allows you to compare the chemical structures of various antibiotics to . "
+    #             "Select up to three antibiotics from the dropdown. The application will then analyze the selected antibiotics and display any matching features they share. Eventually, this app will allow clinicians "
+    #             "to identify the common structures behind a patient's antibiotic allergy, and allow them to safely prescribe alternatives. "
+    #             "<strong>NOTE: App currently in development. This should absolutely not be used in any clinical setting.</strong> <a href='https://github.com/liamlah/penicillinX' target='_blank' style='color: #ffffff;'>More information can be found on GitHub</a>")
+    #
 @reactive.effect # Ensures antibiotic can't be selected twice - remove during RDKIT debugging ********************************************
 def update_dropdown_choices():
     # Grabs the antibiotics selected in each dropdown
