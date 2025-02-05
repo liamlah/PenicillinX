@@ -197,6 +197,10 @@ with ui.tags.div(class_="main-content"):
                     for atom_idx in lactam_atoms:
                         highlight_colors[atom_idx] = (0.4, 0.4, 1, 0.5)  # Blue RGBA
                     messages.append(f"• {selected_abx} contains a <mark style='background-color:#454eb4; color: white;'>Beta-Lactam ring</mark>.")
+                else:
+                    messages.append(f"• {selected_abx} Is not a Beta Lactam Antibiotic")
+
+
 
                 # 2. Substructure comparison with other abx
                 for other_abx in [selected_abx2, selected_abx3]:
@@ -292,6 +296,8 @@ with ui.tags.div(class_="main-content"):
                     for atom_idx in lactam_atoms:
                         highlight_colors[atom_idx] = (0.4, 0.4, 1, 0.5)  # Blue RGBA
                     messages.append(f"• {selected_abx} contains a <mark style='background-color:#454eb4; color: white;'>Beta-Lactam ring</mark>.")
+                else:
+                    messages.append(f"• {selected_abx} Is not a Beta Lactam Antibiotic")
 
                 # 2. Substructure comparison with other abx
                 for other_abx in [selected_abx1, selected_abx3]:
@@ -385,6 +391,8 @@ with ui.tags.div(class_="main-content"):
                     for atom_idx in lactam_atoms:
                         highlight_colors[atom_idx] = (0.4, 0.4, 1, 0.5)  # Blue RGBA
                     messages.append(f"• {selected_abx} contains a <mark style='background-color:#454eb4; color: white;'>Beta-Lactam ring</mark>.")
+                else:
+                    messages.append(f"• {selected_abx} Is not a Beta Lactam Antibiotic")
 
                 # 2. Substructure comparison with other abx
                 for other_abx in [selected_abx1, selected_abx2]:
