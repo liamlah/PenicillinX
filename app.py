@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
+
 # Shiny imports
 from shiny.express import input, render, ui
 import shinyswatch
@@ -9,10 +10,17 @@ from shiny import reactive
 # RDKit imports
 from rdkit import Chem
 from rdkit.Chem.Draw import rdMolDraw2D
+from rdkit.Chem import rdDepictor
+
+# Favicon generation
 from favicon_utils import generate_favicon
+favicon_data_uri = generate_favicon()
 
 # Favicon generation
 favicon_data_uri = generate_favicon()
+
+# Sets Schrodinger's CoordGen algorithm for generating drawing coordinates.
+rdDepictor.SetPreferCoordGen(True)
 
 # Import CSV
 abxData = pd.read_csv(Path(__file__).parent / "antibiotics_data.csv")
@@ -431,7 +439,7 @@ with ui.tags.div(class_="main-content"):
 
 
 # todo
-# Improve small screen and mobile layount: sidebar layout - on top in mobile
+# Improve small screen and mobile layout: sidebar layout - on top in mobile
 # New text box at bottom with summary of matches
 # refactor 3 functions to one if possible
 
