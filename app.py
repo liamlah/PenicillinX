@@ -54,20 +54,32 @@ welcomeMessage = ui.markdown("""
     PenicillinX is still under development. This is a preview for testing purposes. The results presented are currently not validated and should not be used to assist in **any** kind of clinical decision making.
     
     PenicillinX is provided free under the terms of the [GPL v3.0 licence](https://github.com/liamlah/PenicillinX/blob/main/LICENSE)
-    By using this software you agree to the terms of the licence, and agree not to use the results of this program in **any** clinical decision making.
+    By using this software you agree to the terms of the licence and agree <u>to not use any results output by this program to **any** extent in **any** clinical decision making</u>.
 """)
 
-with ui.modal(
+welcome_modal = ui.modal(
     welcomeMessage,
-    title="Welcome",
+    ui.div(
+        {"style": "text-align: center; gap: 10px; display: flex; justify-content: center;"},
+        ui.modal_button("Accept"),
+        ui.tags.a(
+            ui.input_action_button("decline", "Decline", class_="btn btn-default"),
+            href="https://github.com/liamlah/PenicillinX"
+        )
+    ),
+    title=ui.div(
+        {"style": "display: flex; align-items: center; gap: 10px;"},
+        ui.img(src=favicon_data_uri, style="width: 48px; height: 48px;"),
+        "Welcome"
+    ),
     footer=None,
     size='l',
     easy_close=False,
     fade=True,
-    align = "left",
-):
-    with ui.modal_button(label="Accept", icon=None ):
-        pass
+    align="left"
+)
+
+ui.modal_show(welcome_modal)
 
 #================================================== SIDEBAR ==================================================
 with (ui.sidebar(open="always")):
@@ -93,6 +105,14 @@ with (ui.sidebar(open="always")):
         choices=[""] + abxData["Antibiotic"].tolist(),
         options={"Placeholder": "Select Please", "allowEmptyOption": True, "plugins":["clear_button"]})
 
+
+
+    ui.input_action_button("show", "Info")
+
+    @reactive.effect
+    @reactive.event(input.show)
+    def modalOpen():
+        ui.modal_show(welcome_modal)
 
     # @render.ui ----delete if remains unused
     # @reactive.event(input.Info)
@@ -454,4 +474,3 @@ with ui.tags.div(class_="main-content"):
 # Bugs to fix
 # Fix one way matches. e.g ampicillin penicillinG
 # Fix repeating match output for different molecules e.g amox + cefalex + ampicillin
-# Vancomycin rendering is borked
