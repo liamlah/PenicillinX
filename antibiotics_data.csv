@@ -3,6 +3,7 @@ Penicillin G,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(
 Penicillin VK,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)COC1=CC=CC=C1)C(O)=O,NC(=O)COC1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O,
 Ampicillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@@]1(NC(=O)[C@H](N)C2=CC=CC=C2)C(=O)N2[C@@H](C(O)=O)C(C)(C)S[C@]12[H],N[C@@H](C(N)=O)C1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O,
 Amoxicillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@@]1(NC(=O)[C@H](N)C2=CC=C(O)C=C2)C(=O)N2[C@@H](C(O)=O)C(C)(C)S[C@]12[H],N[C@@H](C(N)=O)C1=CC=C(O)C=C1,NaN,NaN,CC(C)(S)CC(O)=O,
+Flucloxacillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,CC1=C(C(=O)N[C@H]2[C@H]3SC(C)(C)[C@@H](N3C2=O)C(O)=O)C(=NO1)C1=C(F)C=CC=C1Cl,CC1=C(C(N)=O)C(=NO1)C1=C(F)C=CC=C1Cl,NaN,NaN,CC(C)(S)CC(O)=O,
 Piperacillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@@]2([H])NC(=O)[C@H](NC(=O)N1CCN(CC)C(=O)C1=O)C1=CC=CC=C1)C(O)=O,CCN1CCN(C(=O)N[C@@H](C(N)=O)C2=CC=CC=C2)C(=O)C1=O,NaN,NaN,CC(C)(S)CC(O)=O,
 Cefazolin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)CN2C=NN=N2)C(=O)N2C(C(O)=O)=C(CSC3=NN=C(C)S3)CS[C@]12[H],NC(=O)CN1C=NN=N1,CSC1=NN=C(C)S1,NaN,OC(=O)\C=C\CS,
 Cefalexin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(C)=C(N1C(=O)[C@H]2NC(=O)[C@H](N)C1=CC=CC=C1)C(O)=O,N[C@@H](C(N)=O)C1=CC=CC=C1,NaN,NaN,OC(=O)\C=C\CS,

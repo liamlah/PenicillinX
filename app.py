@@ -211,6 +211,9 @@ with ui.tags.div(class_="main-content"):
 
                 messages = []  # Collects the messages
 
+                antibiotic_class = abxData.loc[abxData["Antibiotic"] == selected_abx, "Class"].values[0]
+                messages.append(f"• Class: {antibiotic_class}")
+
                 # For blue Beta-Lactam ring
                 if lactam_atoms:
                     highlight_atoms.extend(lactam_atoms)
@@ -310,6 +313,9 @@ with ui.tags.div(class_="main-content"):
 
                 messages = []  # Collects the messages
 
+                antibiotic_class = abxData.loc[abxData["Antibiotic"] == selected_abx, "Class"].values[0]
+                messages.append(f"• Class: {antibiotic_class}")
+
                 # For blue Beta-Lactam ring
                 if lactam_atoms:
                     highlight_atoms.extend(lactam_atoms)
@@ -405,6 +411,9 @@ with ui.tags.div(class_="main-content"):
 
                 messages = []  # Collects the messages
 
+                antibiotic_class = abxData.loc[abxData["Antibiotic"] == selected_abx, "Class"].values[0]
+                messages.append(f"• Class: {antibiotic_class}")
+
                 # For blue Beta-Lactam ring
                 if lactam_atoms:
                     highlight_atoms.extend(lactam_atoms)
@@ -473,4 +482,4 @@ with ui.tags.div(class_="main-content"):
 
 # Bugs to fix
 # Fix one way matches. e.g ampicillin penicillinG
-# Fix repeating match output for different molecules e.g amox + cefalex + ampicillin
+# Fix repeating match output for different molecules e.g amox + cefalex + ampicillin - Fixed????
