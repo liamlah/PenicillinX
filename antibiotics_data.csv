@@ -1,26 +1,27 @@
-Antibiotic,Class,SideChain,BLactamRing,CoreRing,SMILESFull,SMILESR1,SMILESR2,SMILESR3,SMILESRing
-Penicillin G,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)CC1=CC=CC=C1)C(O)=O,NC(=O)CC1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O
-Penicillin VK,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)COC1=CC=CC=C1)C(O)=O,NC(=O)COC1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O
-Ampicillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@@]1(NC(=O)[C@H](N)C2=CC=CC=C2)C(=O)N2[C@@H](C(O)=O)C(C)(C)S[C@]12[H],N[C@@H](C(N)=O)C1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O
-Amoxicillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@@]1(NC(=O)[C@H](N)C2=CC=C(O)C=C2)C(=O)N2[C@@H](C(O)=O)C(C)(C)S[C@]12[H],N[C@@H](C(N)=O)C1=CC=C(O)C=C1,NaN,NaN,CC(C)(S)CC(O)=O
-Piperacillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@@]2([H])NC(=O)[C@H](NC(=O)N1CCN(CC)C(=O)C1=O)C1=CC=CC=C1)C(O)=O,CCN1CCN(C(=O)N[C@@H](C(N)=O)C2=CC=CC=C2)C(=O)C1=O,NaN,NaN,CC(C)(S)CC(O)=O
-Cefazolin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)CN2C=NN=N2)C(=O)N2C(C(O)=O)=C(CSC3=NN=C(C)S3)CS[C@]12[H],NC(=O)CN1C=NN=N1,CSC1=NN=C(C)S1,NaN,OC(=O)\C=C\CS
-Cefalexin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(C)=C(N1C(=O)[C@H]2NC(=O)[C@H](N)C1=CC=CC=C1)C(O)=O,N[C@@H](C(N)=O)C1=CC=CC=C1,NaN,NaN,OC(=O)\C=C\CS
-Cefaclor,2nd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(Cl)=C(N1C(=O)[C@@]2([H])NC(=O)[C@H](N)C1=CC=CC=C1)C(O)=O,N[C@@H](C(N)=O)C1=CC=CC=C1,Cl,NaN,OC(=O)\C=C\CS
-Cefuroxime,2nd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,CO\N=C(/C(=O)N[C@H]1[C@H]2SCC(COC(N)=O)=C(N2C1=O)C(O)=O)C1=CC=CO1,CO\N=C(/C(N)=O)C1=CC=CO1,COC(N)=O,NaN,OC(=O)\C=C\CS
-Ceftriaxone,3rd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)C(=N/OC)\C2=CSC(N)=N2)C(=O)N2C(C(O)=O)=C(CSC3=NC(=O)C(O)=NN3C)CS[C@]12[H],CO\N=C(/C(N)=O)C1=CSC(N)=N1,CSC1=NC(=O)C(O)=NN1C,NaN,OC(=O)\C=C\CS
-Cefotaxime,3rd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]12SCC(COC(C)=O)=C(N1C(=O)[C@@H]2NC(=O)C(=N/OC)\C1=CSC(N)=N1)C(O)=O,CO\N=C(/C(N)=O)C1=CSC(N)=N1,COC(C)=O,NaN,OC(=O)\C=C\CS
-Ceftazidime,3rd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(C[N+]3=CC=CC=C3)=C(N1C(=O)[C@H]2NC(=O)C(=N/OC(C)(C)C(O)=O)\C1=CSC(N)=N1)C([O-])=O,CC(C)(O\N=C(/C(N)=O)C1=CSC(N)=N1)C(O)=O,C[N+]1=CC=CC=C1,NaN,[O-]C(=O)\C=C\CS
-Cefepime,4th Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)C(=N/OC)\C2=CSC(N)=N2)C(=O)N2C(C([O-])=O)=C(C[N+]3(C)CCCC3)CS[C@]12[H],CO\N=C(/C(N)=O)C1=CSC(N)=N1,C[N+]1(C)CCCC1,NaN,[O-]C(=O)\C=C\CS
-Ertapenem,Carbapenem,Acyl,TRUE,Carbapenem Ring,C[C@@H](O)[C@@H]1[C@H]2[C@@H](C)C(S[C@@H]3CN[C@@H](C3)C(=O)NC3=CC(=CC=C3)C(O)=O)=C(N2C1=O)C(O)=O,CCO,NaN,OC(=O)C1=CC=CC(NC(=O)[C@@H]2C[C@H](S)CN2)=C1,CC\C=C\C(O)=O
-Meropenem,Carbapenem,Acyl,TRUE,Carbapenem Ring,[H][C@]1([C@@H](C)O)C(=O)N2C(C(O)=O)=C(S[C@@H]3CN[C@@H](C3)C(=O)N(C)C)[C@H](C)[C@]12[H],CCO,NaN,CN(C)C(=O)[C@@H]1C[C@H](S)CN1,CC\C=C\C(O)=O
-Aztreonam,Monobactam,UniqueSideChain,TRUE,Monobactam Core,C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(O)=O)\C2=CSC(N)=N2)C(=O)N1S(O)(=O)=O,CC(C)(O\N=C(/C(N)=O)C1=CSC(N)=N1)C(O)=O,NaN,OS(=O)=O,NaN
-Ciprofloxacin,Quinolone,NaN,FALSE,NaN,OC(=O)C1=CN(C2CC2)C2=CC(N3CCNCC3)=C(F)C=C2C1=O,NaN,NaN,NaN,NaN
-Levofloxacin,Quinolone,NaN,FALSE,NaN,C[C@H]1COC2=C(N3CCN(C)CC3)C(F)=CC3=C2N1C=C(C(O)=O)C3=O,NaN,NaN,NaN,NaN
-Moxifloxacin,Quinolone,NaN,FALSE,NaN,[H][C@]12CN(C[C@@]1([H])NCCC2)C1=C(F)C=C2C(=O)C(=CN(C3CC3)C2=C1OC)C(O)=O,NaN,NaN,NaN,NaN
-Doxycycline,Tetracycline,NaN,FALSE,NaN,O.[H][C@@]12[C@@H](C)C3=C(C(O)=CC=C3)C(=O)C1=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@@H](N(C)C)[C@]1([H])[C@H]2O,NaN,NaN,NaN,NaN
-Minocycline,Tetracycline,NaN,FALSE,NaN,[H][C@@]12CC3=C(C(O)=CC=C3N(C)C)C(=O)C1=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@@H](N(C)C)[C@]1([H])C2,NaN,NaN,NaN,NaN
-Vancomycin,Glycopeptide,NaN,FALSE,NaN,CN[C@H](CC(C)C)C(=O)N[C@@H]1[C@H](O)C2=CC=C(OC3=C(O[C@@H]4O[C@H](CO)[C@@H](O)[C@H](O)[C@H]4O[C@H]4C[C@](C)(N)C(O)[C@H](C)O4)C4=CC(=C3)[C@@H](NC(=O)[C@H](CC(N)=O)NC1=O)C(=O)N[C@@H]1C3=CC=C(O)C(=C3)C3=C(C=C(O)C=C3O)[C@@H](NC(=O)[C@@H](NC1=O)[C@H](O)C1=CC(Cl)=C(O4)C=C1)C(O)=O)C(Cl)=C2,NaN,NaN,NaN,NaN
-Clindamycin,Lincosamide,NaN,FALSE,NaN,CCC[C@@H]1C[C@H](N(C)C1)C(=O)N[C@H]([C@H](C)Cl)[C@H]1O[C@H](SC)[C@H](O)[C@@H](O)[C@H]1O,NaN,NaN,NaN,NaN
-Gentamicin,Aminoglycoside,NaN,FALSE,NaN,CNC(C)[C@@H]1CC[C@@H](N)[C@@H](OC[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3OC[C@@](C)(O)[C@H](NC)[C@H]3O)[C@H]2O)O1,NaN,NaN,NaN,NaN
-Tobramycin,Aminoglycoside,NaN,FALSE,NaN,NC[C@H]1O[C@H](O[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](N)[C@H]3O)[C@H]2O)[C@H](N)C[C@@H]1O,NaN,NaN,NaN,NaN
+Antibiotic,Class,SideChain,BLactamRing,CoreRing,SMILESFull,SMILESR1,SMILESR2,SMILESR3,SMILESRing,SMILES junk
+Penicillin G,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)CC1=CC=CC=C1)C(O)=O,NC(=O)CC1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O,
+Penicillin VK,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)COC1=CC=CC=C1)C(O)=O,NC(=O)COC1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O,
+Ampicillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@@]1(NC(=O)[C@H](N)C2=CC=CC=C2)C(=O)N2[C@@H](C(O)=O)C(C)(C)S[C@]12[H],N[C@@H](C(N)=O)C1=CC=CC=C1,NaN,NaN,CC(C)(S)CC(O)=O,
+Amoxicillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@@]1(NC(=O)[C@H](N)C2=CC=C(O)C=C2)C(=O)N2[C@@H](C(O)=O)C(C)(C)S[C@]12[H],N[C@@H](C(N)=O)C1=CC=C(O)C=C1,NaN,NaN,CC(C)(S)CC(O)=O,
+Piperacillin,Penicillin,Acyl,TRUE,Thiazolidine Ring,[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@@]2([H])NC(=O)[C@H](NC(=O)N1CCN(CC)C(=O)C1=O)C1=CC=CC=C1)C(O)=O,CCN1CCN(C(=O)N[C@@H](C(N)=O)C2=CC=CC=C2)C(=O)C1=O,NaN,NaN,CC(C)(S)CC(O)=O,
+Cefazolin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)CN2C=NN=N2)C(=O)N2C(C(O)=O)=C(CSC3=NN=C(C)S3)CS[C@]12[H],NC(=O)CN1C=NN=N1,CSC1=NN=C(C)S1,NaN,OC(=O)\C=C\CS,
+Cefalexin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(C)=C(N1C(=O)[C@H]2NC(=O)[C@H](N)C1=CC=CC=C1)C(O)=O,N[C@@H](C(N)=O)C1=CC=CC=C1,NaN,NaN,OC(=O)\C=C\CS,
+Cefalotin,1st Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(COC(C)=O)=C(N1C(=O)[C@H]2NC(=O)CC1=CC=CS1)C(O)=O,NC(=O)CC1=CC=CS1,NaN,NaN,C\C(CS)=C/C(O)=O,CC(O)=O
+Cefaclor,2nd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(Cl)=C(N1C(=O)[C@@]2([H])NC(=O)[C@H](N)C1=CC=CC=C1)C(O)=O,N[C@@H](C(N)=O)C1=CC=CC=C1,Cl,NaN,OC(=O)\C=C\CS,
+Cefuroxime,2nd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,CO\N=C(/C(=O)N[C@H]1[C@H]2SCC(COC(N)=O)=C(N2C1=O)C(O)=O)C1=CC=CO1,CO\N=C(/C(N)=O)C1=CC=CO1,COC(N)=O,NaN,OC(=O)\C=C\CS,
+Ceftriaxone,3rd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)C(=N/OC)\C2=CSC(N)=N2)C(=O)N2C(C(O)=O)=C(CSC3=NC(=O)C(O)=NN3C)CS[C@]12[H],CO\N=C(/C(N)=O)C1=CSC(N)=N1,CSC1=NC(=O)C(O)=NN1C,NaN,OC(=O)\C=C\CS,
+Cefotaxime,3rd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]12SCC(COC(C)=O)=C(N1C(=O)[C@@H]2NC(=O)C(=N/OC)\C1=CSC(N)=N1)C(O)=O,CO\N=C(/C(N)=O)C1=CSC(N)=N1,COC(C)=O,NaN,OC(=O)\C=C\CS,
+Ceftazidime,3rd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(C[N+]3=CC=CC=C3)=C(N1C(=O)[C@H]2NC(=O)C(=N/OC(C)(C)C(O)=O)\C1=CSC(N)=N1)C([O-])=O,CC(C)(O\N=C(/C(N)=O)C1=CSC(N)=N1)C(O)=O,C[N+]1=CC=CC=C1,NaN,[O-]C(=O)\C=C\CS,
+Cefepime,4th Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@@]1(NC(=O)C(=N/OC)\C2=CSC(N)=N2)C(=O)N2C(C([O-])=O)=C(C[N+]3(C)CCCC3)CS[C@]12[H],CO\N=C(/C(N)=O)C1=CSC(N)=N1,C[N+]1(C)CCCC1,NaN,[O-]C(=O)\C=C\CS,
+Ertapenem,Carbapenem,Acyl,TRUE,Carbapenem Ring,C[C@@H](O)[C@@H]1[C@H]2[C@@H](C)C(S[C@@H]3CN[C@@H](C3)C(=O)NC3=CC(=CC=C3)C(O)=O)=C(N2C1=O)C(O)=O,CCO,NaN,OC(=O)C1=CC=CC(NC(=O)[C@@H]2C[C@H](S)CN2)=C1,CC\C=C\C(O)=O,
+Meropenem,Carbapenem,Acyl,TRUE,Carbapenem Ring,[H][C@]1([C@@H](C)O)C(=O)N2C(C(O)=O)=C(S[C@@H]3CN[C@@H](C3)C(=O)N(C)C)[C@H](C)[C@]12[H],CCO,NaN,CN(C)C(=O)[C@@H]1C[C@H](S)CN1,CC\C=C\C(O)=O,
+Aztreonam,Monobactam,UniqueSideChain,TRUE,Monobactam Core,C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(O)=O)\C2=CSC(N)=N2)C(=O)N1S(O)(=O)=O,CC(C)(O\N=C(/C(N)=O)C1=CSC(N)=N1)C(O)=O,NaN,OS(=O)=O,NaN,
+Ciprofloxacin,Quinolone,NaN,FALSE,NaN,OC(=O)C1=CN(C2CC2)C2=CC(N3CCNCC3)=C(F)C=C2C1=O,NaN,NaN,NaN,NaN,
+Levofloxacin,Quinolone,NaN,FALSE,NaN,C[C@H]1COC2=C(N3CCN(C)CC3)C(F)=CC3=C2N1C=C(C(O)=O)C3=O,NaN,NaN,NaN,NaN,
+Moxifloxacin,Quinolone,NaN,FALSE,NaN,[H][C@]12CN(C[C@@]1([H])NCCC2)C1=C(F)C=C2C(=O)C(=CN(C3CC3)C2=C1OC)C(O)=O,NaN,NaN,NaN,NaN,
+Doxycycline,Tetracycline,NaN,FALSE,NaN,O.[H][C@@]12[C@@H](C)C3=C(C(O)=CC=C3)C(=O)C1=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@@H](N(C)C)[C@]1([H])[C@H]2O,NaN,NaN,NaN,NaN,
+Minocycline,Tetracycline,NaN,FALSE,NaN,[H][C@@]12CC3=C(C(O)=CC=C3N(C)C)C(=O)C1=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@@H](N(C)C)[C@]1([H])C2,NaN,NaN,NaN,NaN,
+Vancomycin,Glycopeptide,NaN,FALSE,NaN,CN[C@H](CC(C)C)C(=O)N[C@@H]1[C@H](O)C2=CC=C(OC3=C(O[C@@H]4O[C@H](CO)[C@@H](O)[C@H](O)[C@H]4O[C@H]4C[C@](C)(N)C(O)[C@H](C)O4)C4=CC(=C3)[C@@H](NC(=O)[C@H](CC(N)=O)NC1=O)C(=O)N[C@@H]1C3=CC=C(O)C(=C3)C3=C(C=C(O)C=C3O)[C@@H](NC(=O)[C@@H](NC1=O)[C@H](O)C1=CC(Cl)=C(O4)C=C1)C(O)=O)C(Cl)=C2,NaN,NaN,NaN,NaN,
+Clindamycin,Lincosamide,NaN,FALSE,NaN,CCC[C@@H]1C[C@H](N(C)C1)C(=O)N[C@H]([C@H](C)Cl)[C@H]1O[C@H](SC)[C@H](O)[C@@H](O)[C@H]1O,NaN,NaN,NaN,NaN,
+Gentamicin,Aminoglycoside,NaN,FALSE,NaN,CNC(C)[C@@H]1CC[C@@H](N)[C@@H](OC[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3OC[C@@](C)(O)[C@H](NC)[C@H]3O)[C@H]2O)O1,NaN,NaN,NaN,NaN,
+Tobramycin,Aminoglycoside,NaN,FALSE,NaN,NC[C@H]1O[C@H](O[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](N)[C@H]3O)[C@H]2O)[C@H](N)C[C@@H]1O,NaN,NaN,NaN,NaN,
