@@ -26,3 +26,4 @@ Vancomycin,Glycopeptide,NaN,FALSE,NaN,CN[C@H](CC(C)C)C(=O)N[C@@H]1[C@H](O)C2=CC=
 Clindamycin,Lincosamide,NaN,FALSE,NaN,CCC[C@@H]1C[C@H](N(C)C1)C(=O)N[C@H]([C@H](C)Cl)[C@H]1O[C@H](SC)[C@H](O)[C@@H](O)[C@H]1O,NaN,NaN,NaN,NaN,
 Gentamicin,Aminoglycoside,NaN,FALSE,NaN,CNC(C)[C@@H]1CC[C@@H](N)[C@@H](OC[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3OC[C@@](C)(O)[C@H](NC)[C@H]3O)[C@H]2O)O1,NaN,NaN,NaN,NaN,
 Tobramycin,Aminoglycoside,NaN,FALSE,NaN,NC[C@H]1O[C@H](O[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](N)[C@H]3O)[C@H]2O)[C@H](N)C[C@@H]1O,NaN,NaN,NaN,NaN,
+Cefoxitin,2nd Gen Cephalosporin,Acyl,TRUE,Dihydrothiazine Ring,[H][C@]12SCC(COC(N)=O)=C(N1C(=O)[C@]2(NC(=O)CC1=CC=CS1)OC)C(O)=O,NC(=O)CC1=CC=CS1,NaN,NaN,NC(=O)OC\C(CS)=C/C(O)=O,

@@ -474,7 +474,6 @@ with ui.tags.div(class_="main-content"):
 
 
 
-
 # todo
 # Improve small screen and mobile layout: sidebar layout - on top in mobile
 # New text box at bottom with summary of matches
@@ -483,3 +482,6 @@ with ui.tags.div(class_="main-content"):
 # Bugs to fix
 # Fix one way matches. e.g ampicillin penicillinG
 # Fix repeating match output for different molecules e.g amox + cefalex + ampicillin - Fixed????
+
+# source ./.venv/bin/activate
+# shiny run --reload --launch-browser ./app.py

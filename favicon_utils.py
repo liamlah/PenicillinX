@@ -3,7 +3,7 @@ from rdkit.Chem import Draw
 import base64
 
 
-def generate_favicon(filepath: str = 'www//MOL/PX.mol', img_size: tuple = (192, 192)) -> str:
+def generate_favicon(filepath: str = 'www/MOL/PX.mol', img_size: tuple = (192, 192)) -> str:
     """
     Generate a favicon from a MOL file using RDKit with a white background
     and black molecules (default rendering).
