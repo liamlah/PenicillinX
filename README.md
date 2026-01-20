@@ -24,6 +24,6 @@ If you wish to give feedback, you can test a live version of the app [here.](htt
 
 ## Licence
 
-PenicillinX is licenced under the GPLv3. See the [LICENCE](LICENSE) file for more details.
+PenicillinX is licenced under the GNU Affero General Public Licence. See the [LICENCE](LICENSE) file for more details.
 
 

@@ -53,7 +53,7 @@ welcomeMessage = ui.markdown("""
     #### Warning
     PenicillinX is still under development. This is a preview for testing purposes. The results presented are currently not validated and should not be used to assist in **any** kind of clinical decision making.
     
-    PenicillinX is provided free under the terms of the [GPL v3.0 licence](https://github.com/liamlah/PenicillinX/blob/main/LICENSE)
+    PenicillinX is provided free under the terms of the [AGPL v3.0 licence](https://github.com/liamlah/PenicillinX/blob/main/LICENSE)
     By using this software you agree to the terms of the licence and agree <u>to not use any results output by this program to **any** extent in **any** clinical decision making</u>.
 """)
 
@@ -479,9 +479,10 @@ with ui.tags.div(class_="main-content"):
 # New text box at bottom with summary of matches
 # refactor 3 functions to one if possible
 
-# Bugs to fix
-# Fix one way matches. e.g ampicillin penicillinG
-# Fix repeating match output for different molecules e.g amox + cefalex + ampicillin - Fixed????
+# Bugs to fix:
+# Fix one way matches. e.g. ampicillin penicillinG
+# Fix repeating match output for different molecules e.g. amoxicillin + cefalexin + ampicillin - Fixed????
+# Add secondary comparison - likely dice similarity as fallback when direct comparison is negative
 
 # source ./.venv/bin/activate
 # shiny run --reload --launch-browser ./app.py
