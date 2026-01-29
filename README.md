@@ -14,7 +14,7 @@ bugs are currently present during molecular substructure comparisons.
 
 ## Testing
 
-If you wish to give feedback, you can test a live version of the app [here.](https://liamjones.shinyapps.io/penicillinx-beta/)
+If you wish to give feedback, you can test a live version of the app [here.](https://penicillinX.liamjones.science)
 
 ## Dependencies and sources
 
